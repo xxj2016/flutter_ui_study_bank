@@ -124,8 +124,62 @@ class _CenterWidgetState extends State<CenterWidget> {
                       ),
                     ),
                   ),
-                )
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                ),
+                Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.black,
+                  size: 30,
+                ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Icon(
+                  Icons.swap_horiz,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                ),
+                Text(
+                  'Ddsf dsf',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
+                ),
+                Flexible(
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'R\$500,05',
+                      style: TextStyle(
+                        color: Color(0xff9cddb4),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                ),
+                Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.black,
+                  size: 30,
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
             )
           ],
         ),

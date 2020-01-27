@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_ui_study_bank/bottom_widget.dart';
 import 'package:flutter_ui_study_bank/center_widget.dart';
+import 'package:flutter_ui_study_bank/top_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -76,6 +77,51 @@ class _HomePageState extends State<HomePage> {
                   children: _buildStack(),
                 ),
               ),
+            ),
+            Positioned(
+              top: kToolbarHeight,
+              left: 15,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left: 5,
+                      right: 5,top: 70),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        child: Icon(
+                          Icons.notifications_none,
+                          color: Color(0xff696969),
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        child: Icon(
+                          Icons.info_outline,
+                          color: Color(0xff696969),
+                          size: 30,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: kToolbarHeight,
+              left: 10,
+              child: CircleAvatar(
+                minRadius: 30,
+                child: FlutterLogo(),
+              ),
             )
           ],
         ),
@@ -97,6 +143,14 @@ class _HomePageState extends State<HomePage> {
       left: max_left * (1.0 * yOffset / max_offset),
       child: CenterWidget(_key2),
     ));
+
+    _list.add(Positioned(
+      top: 0,
+      left: 0,
+      child: TopWidget(_key1),
+    ));
+
+    return _list;
   }
 
   double _findHeightByKey(GlobalKey<State<StatefulWidget>> key) {
